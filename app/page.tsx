@@ -1,9 +1,14 @@
+import Features from "@/components/Features";
+import HeroSection from "@/components/Hero";
+import Pricing from "@/components/Pricing";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello</h1>
+      <HeroSection />
+      <Features />
+      <Pricing />
     </>
   );
 }
