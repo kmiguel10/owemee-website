@@ -34,7 +34,11 @@ const Feature = ({ title, text, icon, imageSrc }: FeatureProps) => {
 export default function SimpleThreeColumns() {
   return (
     <Box p={20}>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      <SimpleGrid
+        columns={{ base: 1, md: 3 }}
+        spacing={10}
+        justifyContent={"center"}
+      >
         <Feature
           icon={<Icon as={FcCalculator} w={10} h={10} />}
           title={"Effortless Expense Tracking"}
