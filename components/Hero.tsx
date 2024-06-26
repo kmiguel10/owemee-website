@@ -41,21 +41,27 @@ export default function HeroSection() {
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "red.400",
+                bg: "blue.400",
                 zIndex: -1,
               }}
             >
-              Write once,
+              No More Awkward Money Talks on
             </Text>
             <br />
-            <Text as={"span"} color={"red.400"}>
-              use everywhere!
+            <Text as={"span"} color={"green.400"}>
+              Group Trips!
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
-            Snippy is a rich coding snippets app that lets you create your own
-            code snippets, categorize them, and even sync them in the cloud so
-            you can use them anywhere. All that is free!
+          <Text color={"gray.600"} fontSize={{ base: "lg", sm: "xl" }}>
+            Tired of splitting expenses during group trips? Owemee is the
+            ultimate expense-splitting app that takes the hassle out of shared
+            costs. Say goodbye to mental math, scattered notes, and awkward
+            conversations.
+          </Text>
+          <Text color={"gray.600"} fontSize={{ base: "md", sm: "lg" }}>
+            Focus on making unforgettable memories while Owemee handles tracking
+            and splitting expenses. Clear, easy, and hassle-free expense
+            management.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -66,20 +72,11 @@ export default function HeroSection() {
               size={"lg"}
               fontWeight={"normal"}
               px={6}
-              colorScheme={"red"}
-              bg={"red.400"}
-              _hover={{ bg: "red.500" }}
+              color={"white"}
+              bg={"green.400"}
+              _hover={{ bg: "green.500" }}
             >
-              Get started
-            </Button>
-            <Button
-              rounded={"full"}
-              size={"lg"}
-              fontWeight={"normal"}
-              px={6}
-              leftIcon={<PlayIcon h={4} w={4} color={"gray.300"} />}
-            >
-              How It Works
+              Download Owemee Today
             </Button>
           </Stack>
         </Stack>
@@ -97,7 +94,7 @@ export default function HeroSection() {
             top={"-20%"}
             left={0}
             zIndex={-1}
-            color={useColorModeValue("red.50", "red.400")}
+            color={useColorModeValue("blue.50", "blue.400")}
           />
           <Box
             position={"relative"}
