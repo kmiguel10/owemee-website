@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Center,
   Divider,
   Heading,
   List,
@@ -95,6 +96,11 @@ const PackageTier = ({
 const ThreeTierPricingHorizontal = () => {
   return (
     <Box py={6} px={5} width="full">
+      <Center paddingBottom={20}>
+        <Heading as="h2" size="2xl">
+          Pricing
+        </Heading>
+      </Center>
       <Stack spacing={4} width={"100%"} direction={"column"}>
         <Stack
           p={5}
