@@ -14,6 +14,7 @@ import {
   createIcon,
   IconProps,
   useColorModeValue,
+  Spacer,
 } from "@chakra-ui/react";
 
 export default function HeroSection() {
@@ -22,10 +23,19 @@ export default function HeroSection() {
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 16, md: 24 }}
         direction={{ base: "column", md: "row" }}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+          <Heading
+            lineHeight={1.1}
+            fontWeight={600}
+            fontSize={{ base: "5xl", sm: "6xl", lg: "8xl" }}
+          >
+            <Text as={"span"} color={"green.400"}>
+              Owemee
+            </Text>
+          </Heading>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -80,15 +90,30 @@ export default function HeroSection() {
             </Button>
           </Stack>
         </Stack>
+
         <Flex
           flex={1}
-          justify={"center"}
-          align={"center"}
+          justify={{ base: "center", md: "flex-end" }}
+          align={{ base: "center", md: "flex-end" }}
           position={"relative"}
           w={"full"}
         >
+          <Box
+            position={"relative"}
+            rounded={"2xl"}
+            boxShadow={"2xl"}
+            overflow={"hidden"}
+          >
+            <Image
+              alt={"Hero Image"}
+              fit={"cover"}
+              align={"center"}
+              src={"features/feature1.png"}
+              width={300}
+            />
+          </Box>
           <Blob
-            w={"150%"}
+            w={"100%"}
             h={"150%"}
             position={"absolute"}
             top={"-20%"}
@@ -96,35 +121,6 @@ export default function HeroSection() {
             zIndex={-1}
             color={useColorModeValue("blue.50", "blue.400")}
           />
-          <Box
-          // position={"relative"}
-          // height={"400px"}
-          // rounded={"2xl"}
-          // boxShadow={"2xl"}
-          // width={"full"}
-          // overflow={"hidden"}
-          >
-            {/* <IconButton
-              aria-label={"Play Button"}
-              variant={"ghost"}
-              _hover={{ bg: "transparent" }}
-              icon={<PlayIcon w={12} h={12} />}
-              size={"lg"}
-              color={"white"}
-              position={"absolute"}
-              left={"50%"}
-              top={"50%"}
-              transform={"translateX(-50%) translateY(-50%)"}
-            /> */}
-            <Image
-              alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              w={"50%"}
-              h={"50%"}
-              src={"features/feature1.png"}
-            />
-          </Box>
         </Flex>
       </Stack>
     </Container>
