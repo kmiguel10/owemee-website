@@ -8,13 +8,10 @@ import {
   Heading,
   Text,
   Button,
-  Image,
   Icon,
-  IconButton,
   createIcon,
   IconProps,
   useColorModeValue,
-  Spacer,
 } from "@chakra-ui/react";
 
 export default function HeroSection() {
@@ -103,14 +100,25 @@ export default function HeroSection() {
             rounded={"2xl"}
             boxShadow={"2xl"}
             overflow={"hidden"}
+            width={300}
+            height={"fit-content"}
           >
-            <Image
+            {/* <Image
               alt={"Hero Image"}
               fit={"cover"}
               align={"center"}
               src={"features/feature1.png"}
               width={300}
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            >
+              <source src="/features/videoTest.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </Box>
           <Blob
             w={"100%"}

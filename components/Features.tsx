@@ -1,19 +1,17 @@
 "use client";
 
-import { ReactElement } from "react";
 import {
   Box,
-  SimpleGrid,
-  Icon,
-  Text,
-  Stack,
-  Heading,
   Center,
-  AbsoluteCenter,
-  Flex,
+  Heading,
+  Icon,
+  SimpleGrid,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
-import { FcAssistant, FcCalculator, FcCheckmark } from "react-icons/fc";
 import Image from "next/image"; // Import the Next.js Image component
+import { ReactElement } from "react";
+import { FcAssistant, FcCalculator, FcCheckmark } from "react-icons/fc";
 
 interface FeatureProps {
   title: string;
@@ -86,26 +84,26 @@ export default function SimpleThreeColumns() {
         justifyContent={"center"}
       >
         <Feature
-          icon={<Icon as={FcCalculator} w={10} h={10} />}
-          title={"Effortless Expense Tracking"}
+          icon={<Icon as={FcCheckmark} w={10} h={10} />}
+          title={"Monitor Expenses Easily"}
           text={
-            "Add expenses on the go and let Owemee keep track of who owes what. No more mental math or awkward money talks."
+            "Throughout the duration of your trip, have a clear picture of who owes who and how much"
           }
           imageSrc="/features/feature1.png" // Ensure this path is correct
         />
         <Feature
-          icon={<Icon as={FcCheckmark} w={10} h={10} />}
-          title={"Settle Up Easily"}
+          icon={<Icon as={FcCalculator} w={10} h={10} />}
+          title={"Effortless Expense Tracking"}
           text={
-            "When the trip ends, settling up is a breeze. Owemee calculates the simplest way to pay back and helps you settle debts seamlessly."
+            "Easily add transactions on the go and let Owemee keep track of who owes what."
           }
           imageSrc="/features/feature1.png" // Ensure this path is correct
         />
         <Feature
           icon={<Icon as={FcAssistant} w={10} h={10} />}
-          title={"Transparency and Trust"}
+          title={"Split Transaction Amount"}
           text={
-            "Keep everyone in the loop with transparent expense logs. Everyone can see who paid for what, eliminating confusion and building trust."
+            "Sometimes, you might want to split the amount evenly or customize the split among the group."
           }
           imageSrc="/features/feature1.png" // Ensure this path is correct
         />
