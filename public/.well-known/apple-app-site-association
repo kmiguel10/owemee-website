@@ -4,12 +4,6 @@
     "details": [
       {
         "appID": "6ACKA9NMLB.com.anonymous.my-tab",
-        "components": [
-          {
-            "/": "/screens/new-password",
-            "comment": "Matches url to enter a new password"
-          }
-        ],
         "paths": [
           "/screens/new-password"
         ]
