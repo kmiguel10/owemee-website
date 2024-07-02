@@ -5,7 +5,7 @@
       {
         "appID": "6ACKA9NMLB.com.anonymous.my-tab",
         "paths": [
-          "/screens/new-password"
+          "/"
         ]
       }
     ]
