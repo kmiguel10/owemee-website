@@ -22,6 +22,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { Router } from "next/router";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -238,6 +239,10 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: "Home",
+    href: "/",
+  },
   {
     label: "What's new?",
     href: "/whatsnew",
