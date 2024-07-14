@@ -104,6 +104,8 @@ const ThreeTierPricingHorizontal = () => {
       <Stack spacing={4} width={"100%"} direction={"column"}>
         <Stack
           p={5}
+          paddingBottom={20}
+          paddingTop={20}
           alignItems={"center"}
           justifyContent={{
             base: "flex-start",

@@ -18,9 +18,18 @@ interface FeatureProps {
   text: string;
   icon: ReactElement;
   imageSrc: string; // Add imageSrc as a prop
+  videoSrc: string;
+  isVideo: boolean;
 }
 
-const Feature = ({ title, text, icon, imageSrc }: FeatureProps) => {
+const Feature = ({
+  title,
+  text,
+  icon,
+  imageSrc,
+  videoSrc,
+  isVideo,
+}: FeatureProps) => {
   return (
     <Stack
       gap={20}
@@ -55,14 +64,26 @@ const Feature = ({ title, text, icon, imageSrc }: FeatureProps) => {
           overflow={"hidden"}
           width={300}
         >
-          <Image
-            objectFit="cover"
-            alt={title}
-            src={imageSrc}
-            sizes="100vw"
-            width={300}
-            height={300}
-          />
+          {isVideo ? (
+            <video
+              autoPlay
+              loop
+              muted
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <Image
+              objectFit="cover"
+              alt={title}
+              src={imageSrc}
+              sizes="100vw"
+              width={300}
+              height={300}
+            />
+          )}
         </Box>
       </Center>
     </Stack>
@@ -89,7 +110,9 @@ export default function SimpleThreeColumns() {
           text={
             "Throughout the duration of your trip, have a clear picture of who owes who and how much"
           }
-          imageSrc="/features/feature1.png" // Ensure this path is correct
+          imageSrc="/features/tabs.mp4" // Ensure this path is correct
+          videoSrc={"/features/tabs.mp4"}
+          isVideo={true}
         />
         <Feature
           icon={<Icon as={FcCalculator} w={10} h={10} />}
@@ -98,6 +121,8 @@ export default function SimpleThreeColumns() {
             "Easily add transactions on the go and let Owemee keep track of who owes what."
           }
           imageSrc="/features/feature1.png" // Ensure this path is correct
+          videoSrc={"/features/resized-create-transaction.mp4"}
+          isVideo={true}
         />
         <Feature
           icon={<Icon as={FcAssistant} w={10} h={10} />}
@@ -106,6 +131,8 @@ export default function SimpleThreeColumns() {
             "Sometimes, you might want to split the amount evenly or customize the split among the group."
           }
           imageSrc="/features/feature1.png" // Ensure this path is correct
+          videoSrc={"/features/resized-edit-transaction.mp4"}
+          isVideo={true}
         />
       </SimpleGrid>
     </Box>
