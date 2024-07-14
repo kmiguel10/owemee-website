@@ -1,28 +1,26 @@
 "use client";
 
 import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-} from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
 } from "@chakra-ui/icons";
-import { Router } from "next/router";
+import {
+  Box,
+  Collapse,
+  Flex,
+  Icon,
+  IconButton,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
+import Image from "next/image";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -54,14 +52,17 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
+        <Flex flex={{ base: 1 }} justify={{ base: "end", md: "start" }}>
+          <Box borderRadius="md" overflow="hidden">
+            <Image
+              objectFit="cover"
+              alt={"Owemee logo"}
+              src={"/logo.png"}
+              sizes="100vw"
+              width={30}
+              height={30}
+            />
+          </Box>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
