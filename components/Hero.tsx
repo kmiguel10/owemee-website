@@ -103,23 +103,13 @@ export default function HeroSection() {
             width={300}
             height={"fit-content"}
           >
-            {/* <Image
-              alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              src={"features/feature1.png"}
-              width={300}
-            /> */}
             <video
               autoPlay
               loop
               muted
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             >
-              <source
-                src="/features/resized-view-settlement.mp4"
-                type="video/mp4"
-              />
+              <source src="/features/resized-tabs.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </Box>

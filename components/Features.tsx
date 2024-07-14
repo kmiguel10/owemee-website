@@ -111,7 +111,7 @@ export default function SimpleThreeColumns() {
             "Throughout the duration of your trip, have a clear picture of who owes who and how much"
           }
           imageSrc="/features/tabs.mp4" // Ensure this path is correct
-          videoSrc={"/features/tabs.mp4"}
+          videoSrc={"/features/resized-view-settlement.mp4"}
           isVideo={true}
         />
         <Feature
