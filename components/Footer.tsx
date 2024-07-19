@@ -1,18 +1,17 @@
 "use client";
 
-import { ReactNode } from "react";
 import {
   Box,
   Container,
   Stack,
-  SimpleGrid,
   Text,
   VisuallyHidden,
   chakra,
   useColorModeValue,
-  Link,
 } from "@chakra-ui/react";
-import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import { ReactNode } from "react";
 
 // import { AppStoreBadge } from "#/components/AppStoreBadge";
 // import { PlayStoreBadge } from "#/components/PlayStoreBadge";
@@ -72,26 +71,58 @@ export default function LargeWithAppLinksAndSocial() {
           as={Stack}
           maxW={"6xl"}
           py={8}
-          direction={{ base: "column", md: "column" }}
-          spacing={4}
-          justify={{ md: "space-between" }}
-          align={{ md: "center" }}
+          // direction={{ base: "column", md: "column" }}
+          // spacing={4}
+          // justify={{ md: "space-between" }}
+          // align={{ md: "center" }}
+          spacing={{ base: 4, sm: 20 }}
+          direction={{ base: "column", sm: "row" }}
+          justify={"space-between"}
+          alignItems={"center"}
         >
-          <Stack>
-            <Text>© 2024 Kent Miguel. All rights reserved</Text>
+          <Stack
+            spacing={{ base: 4, sm: 4 }}
+            direction={{ base: "column", sm: "column" }}
+            justify={"flex-start"}
+          >
+            <Stack direction={"row"} spacing={6}>
+              <Text>
+                <Link href="/privacy">Privacy Policy</Link>
+              </Text>
+              <Text>
+                <Link href="mailto:owemeeapp@gmail.com">Contact Us</Link>
+              </Text>
+              <Text>
+                <Link href="/whatsnew">What&apos;s New</Link>
+              </Text>
+            </Stack>
+            <Stack>
+              <Text>© 2024 Kent Miguel. All rights reserved</Text>
+            </Stack>
           </Stack>
-          <Stack direction={"row"} spacing={6}>
-            <Text>
-              <Link href="/privacy">Privacy Policy</Link>
-            </Text>
-            <Text>
-              <Link href="mailto:owemeeapp@gmail.com" isExternal>
-                Contact Us
-              </Link>
-            </Text>
-            <Text>
-              <Link href="/whatsnew">What&apos;s New</Link>
-            </Text>
+          <Stack
+            spacing={{ base: 4, sm: 20 }}
+            direction={{ base: "column", sm: "row" }}
+            justify={"center"}
+            alignItems={"center"}
+          >
+            <Link
+              href="https://apps.apple.com/us/app/owemee/id6503184430?itsct=apps_box_link&itscg=30200"
+              passHref
+            >
+              <Image
+                src={"/download-button.svg"}
+                alt={"Download Owemee Appstore Link"}
+                width={130}
+                height={130}
+              />
+            </Link>
+            <Image
+              src={"/qr-code.jpg"}
+              alt={"Download Owemee Appstore Link"}
+              width={100}
+              height={100}
+            />
           </Stack>
         </Container>
       </Box>
