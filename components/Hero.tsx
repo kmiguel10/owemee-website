@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+
 import {
   Container,
   Stack,
@@ -71,20 +74,29 @@ export default function HeroSection() {
             management.
           </Text>
           <Stack
-            spacing={{ base: 4, sm: 6 }}
+            spacing={{ base: 4, sm: 20 }}
             direction={{ base: "column", sm: "row" }}
+            justify={"center"}
+            alignItems={"center"}
           >
-            <Button
-              rounded={"full"}
-              size={"lg"}
-              fontWeight={"normal"}
-              px={6}
-              color={"white"}
-              bg={"green.400"}
-              _hover={{ bg: "green.500" }}
+            <Link
+              href="https://apps.apple.com/us/app/owemee/id6503184430?itsct=apps_box_link&itscg=30200"
+              passHref
             >
-              Download Owemee Today
-            </Button>
+              <Image
+                src={"/download-button.svg"}
+                alt={"Download Owemee Appstore Link"}
+                width={190}
+                height={190}
+              />
+            </Link>
+
+            <Image
+              src={"/qr-code.jpg"}
+              alt={"Download Owemee Appstore Link"}
+              width={190}
+              height={190}
+            />
           </Stack>
         </Stack>
 
