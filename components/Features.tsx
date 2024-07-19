@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Image from "next/image"; // Import the Next.js Image component
+import Image from "next/image";
 import { ReactElement } from "react";
 import { FcAssistant, FcCalculator, FcCheckmark } from "react-icons/fc";
 
@@ -17,7 +17,7 @@ interface FeatureProps {
   title: string;
   text: string;
   icon: ReactElement;
-  imageSrc: string; // Add imageSrc as a prop
+  imageSrc: string;
   videoSrc: string;
   isVideo: boolean;
 }
@@ -32,6 +32,7 @@ const Feature = ({
 }: FeatureProps) => {
   return (
     <Stack
+      as="article"
       gap={20}
       justifyContent={"space-around"}
       direction={{ base: "column", md: "row" }}
@@ -44,6 +45,7 @@ const Feature = ({
       >
         <Stack gap="6">
           <Heading
+            as="h3"
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "4xl", lg: "4xl" }}
@@ -69,6 +71,8 @@ const Feature = ({
               autoPlay
               loop
               muted
+              playsInline
+              aria-label={`Video demonstrating ${title}`}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             >
               <source src={videoSrc} type="video/mp4" />
@@ -77,11 +81,12 @@ const Feature = ({
           ) : (
             <Image
               objectFit="cover"
-              alt={title}
+              alt={`Image illustrating ${title}`}
               src={imageSrc}
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 300px"
               width={300}
               height={300}
+              priority
             />
           )}
         </Box>
@@ -90,50 +95,52 @@ const Feature = ({
   );
 };
 
-export default function SimpleThreeColumns() {
+export default function Features() {
   return (
-    <Box p={20}>
+    <Box as="section" p={20} aria-labelledby="features-heading">
       <Center>
-        <Heading as={"h2"} size="2xl" paddingBottom={20}>
+        <Heading as="h2" id="features-heading" size="2xl" paddingBottom={20}>
           Features
         </Heading>
       </Center>
 
       <SimpleGrid
-        row={{ base: 1, md: 3 }}
+        as="ul"
+        columns={{ base: 1, md: 1 }}
         spacing={10}
         justifyContent={"center"}
+        listStyleType="none"
       >
-        <Feature
-          icon={<Icon as={FcCheckmark} w={10} h={10} />}
-          title={"Monitor Expenses Easily"}
-          text={
-            "Throughout the duration of your trip, have a clear picture of who owes who and how much"
-          }
-          imageSrc="/features/tabs.mp4" // Ensure this path is correct
-          videoSrc={"/features/resized-view-settlement.mp4"}
-          isVideo={true}
-        />
-        <Feature
-          icon={<Icon as={FcCalculator} w={10} h={10} />}
-          title={"Effortless Expense Tracking"}
-          text={
-            "Easily add transactions on the go and let Owemee keep track of who owes what."
-          }
-          imageSrc="/features/feature1.png" // Ensure this path is correct
-          videoSrc={"/features/resized-create-transaction.mp4"}
-          isVideo={true}
-        />
-        <Feature
-          icon={<Icon as={FcAssistant} w={10} h={10} />}
-          title={"Split Transaction Amount"}
-          text={
-            "Sometimes, you might want to split the amount evenly or customize the split among the group."
-          }
-          imageSrc="/features/feature1.png" // Ensure this path is correct
-          videoSrc={"/features/resized-edit-transaction.mp4"}
-          isVideo={true}
-        />
+        <li>
+          <Feature
+            icon={<Icon as={FcCheckmark} w={10} h={10} />}
+            title="Monitor Expenses Easily"
+            text="Throughout the duration of your trip, have a clear picture of who owes who and how much"
+            imageSrc="/features/tabs.mp4"
+            videoSrc="/features/resized-view-settlement.mp4"
+            isVideo={true}
+          />
+        </li>
+        <li>
+          <Feature
+            icon={<Icon as={FcCalculator} w={10} h={10} />}
+            title="Effortless Expense Tracking"
+            text="Easily add transactions on the go and let Owemee keep track of who owes what."
+            imageSrc="/features/feature1.png"
+            videoSrc="/features/resized-create-transaction.mp4"
+            isVideo={true}
+          />
+        </li>
+        <li>
+          <Feature
+            icon={<Icon as={FcAssistant} w={10} h={10} />}
+            title="Split Transaction Amount"
+            text="Sometimes, you might want to split the amount evenly or customize the split among the group."
+            imageSrc="/features/feature1.png"
+            videoSrc="/features/resized-edit-transaction.mp4"
+            isVideo={true}
+          />
+        </li>
       </SimpleGrid>
     </Box>
   );

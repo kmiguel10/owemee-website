@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.owemee.app
+
+# Sitemaps
+Sitemap: https://www.owemee.app/sitemap.xml
